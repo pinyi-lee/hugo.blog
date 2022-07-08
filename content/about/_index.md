@@ -1,16 +1,15 @@
-# PinYi Lee
-
 **一名後端工程師，對軟體工程、重訓、極簡生活...等領域，充滿興趣**
 
 ----
 
 #### BackEnd Engineer, 宏願數位股份有限公司, 新店 ON 2021/11~仍在職
 
-`Golang` / `Mongo` / `Redis` / `Docker`
+`Golang` / `Docker` / `PostgreSQL` / `Mongo` / `Redis` / `Nats` / `Elasticsearch`
 
 - 維護公司 legacy payment service
 - 藉由讀 code、code review，讓自己了解更多，並協助釐清複雜問題背後的關係
-- 利用 Gin(Golang)，撰寫 subscription micro service
+- 使用 gin，寫 subscription microservice
+- 使用 gorilla websocket，寫 chat microservice
 
 ----
 
