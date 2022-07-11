@@ -1,5 +1,9 @@
 **一名後端工程師，對軟體工程、重訓、極簡生活...等領域，充滿興趣**
 
+> email：<pinyi_lee@icloud.com>  
+> linkedin：<https://www.linkedin.com/in/peach-pinyi>  
+> github：<https://github.com/pinyi-lee>  
+
 ----
 
 #### BackEnd Engineer, 宏願數位股份有限公司, 新店 ON 2021/11~仍在職
@@ -49,5 +53,5 @@
 
 `Unity(C#)`
 - 利用Unity製作雙平台遊戲
-- 擁有UI互動、Server端串接、3D動畫、關卡編輯器...等等的遊戲製作知識
+- 擁有UI互動、Server串接、3D動畫、關卡編輯器...等等的遊戲製作知識
 ----
