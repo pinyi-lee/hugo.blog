@@ -1,6 +1,6 @@
 ---
 title: "NoSQL CAP"
-date: 2022-07-11T21:00:00+08:00
+date: 2022-07-11T21:02:00+08:00
 draft: false
 tags: ["nosql", "database",]
 ---

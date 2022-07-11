@@ -1,6 +1,6 @@
 ---
 title: "Nats Cluster"
-date: 2022-07-11T21:00:00+08:00
+date: 2022-07-11T21:01:00+08:00
 draft: false
 tags: ["nats",]
 ---
