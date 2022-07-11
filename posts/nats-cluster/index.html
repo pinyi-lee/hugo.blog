@@ -1,0 +1,34 @@
+<!doctype html><html lang=en-us><head><title>Nats Cluster | PinYi - Software Engineer</title><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=description content="您可以將服務器集群在一起，以實現大容量消息傳遞系統"><meta name=generator content="Hugo 0.81.0"><meta name=ROBOTS content="NOINDEX, NOFOLLOW"><link rel=stylesheet href=/hugo.blog/css/style.css><link rel="shortcut icon" href=/hugo.blog/images/favicon.ico type=image/x-icon></head><body><nav class=navigation><a href=/hugo.blog/><span class=arrow>←</span>Home</a>
+<a href=/hugo.blog/posts>Archive</a>
+<a href=/hugo.blog/tags>Tags</a>
+<a href=/hugo.blog/about>About</a></nav><main class=main><section id=single><h1 class=title>Nats Cluster</h1><div class=tip><time datetime="2022-07-11 21:00:00 +0800 +0800">Jul 11, 2022</time>
+<span class=split>·</span>
+<span>92 words</span>
+<span class=split>·</span>
+<span>1 minute read</span></div><div class=content><p>您可以將服務器集群在一起，以實現大容量消息傳遞系統</p><hr><h4 id=connecting-to-a-cluster>Connecting to a Cluster <a href=#connecting-to-a-cluster class=anchor>🔗</a></h4><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-golang data-lang=golang><span style=color:#a6e22e>servers</span> <span style=color:#f92672>:=</span> []<span style=color:#66d9ef>string</span>{<span style=color:#e6db74>&#34;nats://127.0.0.1:1222&#34;</span>, <span style=color:#e6db74>&#34;nats://127.0.0.1:1223&#34;</span>, <span style=color:#e6db74>&#34;nats://127.0.0.1:1224&#34;</span>}
+<span style=color:#a6e22e>nc</span>, <span style=color:#a6e22e>err</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>nats</span>.<span style=color:#a6e22e>Connect</span>(<span style=color:#a6e22e>strings</span>.<span style=color:#a6e22e>Join</span>(<span style=color:#a6e22e>servers</span>, <span style=color:#e6db74>&#34;,&#34;</span>))
+<span style=color:#66d9ef>if</span> <span style=color:#a6e22e>err</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>nil</span> {
+    <span style=color:#a6e22e>log</span>.<span style=color:#a6e22e>Fatal</span>(<span style=color:#a6e22e>err</span>)
+}
+<span style=color:#66d9ef>defer</span> <span style=color:#a6e22e>nc</span>.<span style=color:#a6e22e>Close</span>()
+</code></pre></div><p><a href=https://docs.nats.io/using-nats/developer/connecting/cluster target=_blank rel=noopener>參考連結</a></p><hr><h4 id=cluster-test>Cluster Test <a href=#cluster-test class=anchor>🔗</a></h4><pre><code>brew services install nats-server
+brew install nats-io/nats-tools/nats
+
+視窗一
+nats-server -p 4222 -cluster nats://localhost:4248 --cluster_name test-cluster
+
+視窗二
+nats-server -p 5222 -cluster nats://localhost:5248 -routes nats://localhost:4248 --cluster_name test-cluster
+
+視窗三
+nats-server -p 6222 -cluster nats://localhost:6248 -routes nats://localhost:4248 --cluster_name test-cluster
+
+視窗四
+nats sub -s &quot;nats://127.0.0.1:4222&quot; hello
+
+視窗五
+nats pub -s &quot;nats://127.0.0.1:5222&quot; hello world_5222
+nats pub -s &quot;nats://127.0.0.1:6222&quot; hello world_6222
+</code></pre><p><a href=https://docs.nats.io/running-a-nats-service/configuration/clustering target=_blank rel=noopener>參考連結</a></p><hr><h4 id=nats-topology>Nats Topology <a href=#nats-topology class=anchor>🔗</a></h4><ul><li>Server</li><li>Cluster</li><li>Super Cluster</li><li>Leaf Node</li></ul><p><a href=https://dev.to/karanpratapsingh/nats-topology-318g target=_blank rel=noopener>參考連結</a></p><hr></div><div class=tags><a href=https://pinyi-lee.github.io/hugo.blog/tags/nats>nats</a></div></section></main><footer id=footer><div class=copyright>© Copyright
+2022
+<span class=split><svg fill="#bbb" width="15" height="15" id="heart-15" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><path d="M13.91 6.75c-1.17 2.25-4.3 5.31-6.07 6.94-.1903.1718-.4797.1718-.67.0C5.39 12.06 2.26 9 1.09 6.75-1.48 1.8 5-1.5 7.5 3.45 10-1.5 16.48 1.8 13.91 6.75z"/></svg></span></div><div class=powerby>Powered by <a href=http://www.gohugo.io/>Hugo</a> Theme By <a href=https://github.com/nodejh/hugo-theme-mini>nodejh</a></div></footer></body></html>
