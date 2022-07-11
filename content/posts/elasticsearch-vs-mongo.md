@@ -2,10 +2,12 @@
 title: "Elasticsearch vs Mongodb"
 date: 2022-07-08T14:00:00+08:00
 draft: false
-tags: ["elasticsearch", "mongodb",]
+tags: ["elasticsearch", "mongodb", "database",]
 ---
 
 為了考慮吞吐量，從 sql 轉移到 分散式 db，我們來比較 Elasticsearch 與 Mongodb<!--more-->
+
+----
 
 #### Elasticsearch 弱項
 - 缺乏 transaction
