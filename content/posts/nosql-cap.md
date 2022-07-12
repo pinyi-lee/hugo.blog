@@ -24,7 +24,11 @@ tags: ["nosql", "database",]
 
 #### Transaction
 分散式架構下我們無法僅靠 transaction 就確保一致性，必須額外搭配共識（Consensus）的機制  
-two-phase commit : 為了使基於分布式系統架構下的所有節點在進行事務提交時保持一致性而設計的一種演算法
+
+----
+
+#### Two Phase Commit
+為了使分布式系統架構下的所有節點，在進行事務提交時保持一致性，而設計的一種演算法
 
 ----
 

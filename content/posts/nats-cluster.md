@@ -25,27 +25,26 @@ defer nc.Close()
 
 #### Cluster Test
 
-```
+```html
 brew services install nats-server
 brew install nats-io/nats-tools/nats
 
-視窗一
+視窗一  
 nats-server -p 4222 -cluster nats://localhost:4248 --cluster_name test-cluster
 
-視窗二
+視窗二  
 nats-server -p 5222 -cluster nats://localhost:5248 -routes nats://localhost:4248 --cluster_name test-cluster
 
-視窗三
+視窗三  
 nats-server -p 6222 -cluster nats://localhost:6248 -routes nats://localhost:4248 --cluster_name test-cluster
 
-視窗四
+視窗四  
 nats sub -s "nats://127.0.0.1:4222" hello
 
-視窗五
-nats pub -s "nats://127.0.0.1:5222" hello world_5222
+視窗五  
+nats pub -s "nats://127.0.0.1:5222" hello world_5222 
 nats pub -s "nats://127.0.0.1:6222" hello world_6222
 ```
-
 
 [參考連結](https://docs.nats.io/running-a-nats-service/configuration/clustering)
 

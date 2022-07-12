@@ -13,7 +13,12 @@ tags: ["database",]
 - 分庫：降低單台機器的負載，CPU瓶頸、網路連線數瓶頸、IO瓶頸
 - 分表：提高數據訪問的效率，CPU瓶頸、IO瓶頸
 
-> Partition分片、Sharding分區，兩個都有分而治之的核心概念，差別在於Sharding是指資料分佈在多台機器節點上，但Partition沒有
+----
+
+#### Partition 分片 & Sharding 分區
+
+兩個都有分而治之的核心概念  
+差別在於 Sharding 是指資料分佈在多台機器節點上，但 Partition 沒有
 
 ----
 
