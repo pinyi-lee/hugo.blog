@@ -10,10 +10,29 @@
 
 `Golang` / `Docker` / `PostgreSQL` / `Mongo` / `Redis` / `Nats` / `Elasticsearch`
 
-- 維護公司 legacy payment service
-- 藉由讀 code、code review，讓自己了解更多，並協助釐清複雜問題背後的關係
-- 使用 gin，寫 subscription microservice
-- 使用 gorilla websocket，寫 chat microservice
+- 維護公司 Legacy Payment Service
+- 藉由讀 Code、Code Review，讓自己了解更多，並協助釐清複雜問題背後的關係
+- 撰寫 Subscription Service，用於紀錄使用者的訂閱資訊、歷史紀錄...等等
+- 撰寫 Chat Service，讓使用者可以即時通訊
+
+Subscription Service
+> 使用 golang + gin 開發  
+  使用 swagger 建立 api 文件  
+  使用 mongodb 作為 main database  
+  使用 goroutine + time.Tick 建立 schedule，做定時操作  
+  撰寫 testcase 提升程式碼品質  
+  使用 dockerfile 建立 image
+
+Chat Service
+> 使用 golang + gorilla websocket 開發  
+  使用 postgresql 作為 main database  
+  使用 redis cache，提升 api 速度  
+  使用 nats 建立 websocket service 之間的溝通  
+  使用 elasticsearch 作為 搜尋使用者 id 的搜尋引擎  
+  使用 goroutine + channel 撰寫 concurrency 程式  
+  使用 pprof 檢測 goroutine 釋放是否正常  
+  撰寫 bot 做簡單的壓測  
+
 
 ----
 
@@ -22,7 +41,7 @@
 `Scala` / `MySql` / `Magento(PHP)` / `Redis`
 
 - 用一個月的時間，學習 Scala 語言與後端知識，轉職為後端工程師
-- 撰寫第一個 Service，用於紀錄玩家遊玩時間，並協同建立「同時遊玩限制」機制
+- 撰寫 Playtime Service，用於紀錄遊玩時間，並協同建立「同時遊玩限制」機制
 - 重構整個 viveport.com，讓客服、營運等其他單位，更便於使用網站
 - 利用 Magento(PHP)，幫助公司更快速建構商城。如：企業商城、NFT、藝術品
 
@@ -32,7 +51,7 @@
 
 `Unity(C#)` / `Bigquery` / `DataStudio`
 
-- 為公司救火、接回 Unity 外包，讓 vive focus vr store 與硬體一起出貨，順利上線
+- 為公司救火、接回外包，讓 Vive Focus VR Store 與硬體一起出貨，順利上線
 - 在主管指導下，為 Client 產品建立報表，並於百人團隊內演講，宣傳數據的重要
 
 ----
