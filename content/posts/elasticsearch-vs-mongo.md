@@ -6,6 +6,7 @@ tags: ["elasticsearch", "mongodb", "database",]
 ---
 
 為了考慮吞吐量，從 sql 轉移到 分散式 db，我們來比較 Elasticsearch 與 Mongodb<!--more-->
+> 此篇為各筆記之整理，非原創內容，資料來源可見文後參考資料連結。
 
 ----
 
